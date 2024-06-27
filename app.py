@@ -64,17 +64,17 @@ st.markdown(
 # Sidebar with logo and information
 with st.sidebar:
     st.image("lips.png", width=100)
-    st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title">التعرف على الكلام البصري</div>', unsafe_allow_html=True)
     st.markdown(
         """
-        This application uses visual speech recognition to convert video inputs to text. 
-        Upload an MP4 video, and the app will process the video to recognize and display the spoken text.
+        هذا التطبيق يستخدم التعرف على الكلام البصري لتحويل ملفات الفيديو إلى نص.
+        قم بتحميل ملف فيديو بتنسيق MP4، وسيقوم التطبيق بمعالجة الفيديو للاعتراف وعرض النص المنطوق.
         """,
         unsafe_allow_html=True
     )
 
 # Main content
-st.markdown('<div class="header">Upload your MP4 video file</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">قم بتحميل ملف الفيديو MP4 الخاص بك</div>', unsafe_allow_html=True)
 
 # Create a file uploader
 st.markdown('<div class="uploader">', unsafe_allow_html=True)
@@ -86,18 +86,18 @@ if uploaded_file is not None:
 
     with col1:
         # Display the uploaded video
-        st.markdown('<div class="subheader">Uploaded Video</div>', unsafe_allow_html=True)
+        st.markdown('<div class="subheader">ملف الفيديو المحمل</div>', unsafe_allow_html=True)
         st.video("https://www.w3schools.com/html/mov_bbb.mp4")  # Placeholder video
 
     with col2:
         # Display the processed video
-        st.markdown('<div class="subheader">Processed Video</div>', unsafe_allow_html=True)
+        st.markdown('<div class="subheader">معالجة الفيديو</div>', unsafe_allow_html=True)
         
         # Show a progress bar and message
         progress_message = st.empty()
         progress_bar = st.empty()
         
-        progress_message.markdown('<div class="subheader">Processing Video...</div>', unsafe_allow_html=True)
+        progress_message.markdown('<div class="subheader">جارٍ معالجة الفيديو...</div>', unsafe_allow_html=True)
         progress_bar = progress_bar.progress(0)
         
         for percent_complete in range(100):
@@ -112,13 +112,13 @@ if uploaded_file is not None:
         st.video("https://www.w3schools.com/html/mov_bbb.mp4")  # Placeholder video
 
         # Show a spinner while processing
-        with st.spinner('Running speech recognition...'):
+        with st.spinner('جارٍ تشغيل التعرف على الكلام...'):
             time.sleep(2)  # Simulate processing time
 
         # Show the result
-        st.success("Processing complete!")
-        st.markdown('<div class="subheader">Recognized Speech</div>', unsafe_allow_html=True)
-        st.markdown('<div class="recognized-text">You said: [recognized speech placeholder]</div>', unsafe_allow_html=True)
+        st.success("اكتملت عملية المعالجة!")
+        st.markdown('<div class="subheader">النص المعترف به</div>', unsafe_allow_html=True)
+        st.markdown('<div class="recognized-text">لقد قلت: [نص معترف به]</div>', unsafe_allow_html=True)
 
 else:
-    st.warning("Please upload an MP4 video file.")
+    st.warning("الرجاء تحميل ملف فيديو MP4.")
