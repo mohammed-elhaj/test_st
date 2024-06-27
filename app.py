@@ -26,7 +26,7 @@ st.markdown(
         margin-bottom: 1em;
     }
     .subheader {
-        font-size: 1.25em;
+        font-size: 1.5em;
         color: #FF5722;
         text-align: center;
         margin-bottom: 0.5em;
@@ -36,36 +36,40 @@ st.markdown(
         justify-content: center;
         align-items: center;
     }
-    .logo {
-        max-width: 100px;
-        margin-bottom: 20px;
-    }
-    .uploader {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1em;
+    .recognized-text {
+        font-size: 1.5em;
+        color: #333333;
+        text-align: center;
+        margin-top: 1em;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Display the logo
-st.markdown('<div class="center"><img class="logo" src="lips.png" alt="Lips Logo"></div>', unsafe_allow_html=True)
+# Sidebar with logo and information
+with st.sidebar:
+    st.image("lips.png", width=100)
+    st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_html=True)
+    st.markdown(
+        """
+        This application uses visual speech recognition to convert video inputs to text. 
+        Upload an MP4 video, and the app will process the video to recognize and display the spoken text.
+        """,
+        unsafe_allow_html=True
+    )
 
-# Set the title of the app
-st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_html=True)
-
-# Add a header
+# Main content
 st.markdown('<div class="header">Upload your MP4 video file</div>', unsafe_allow_html=True)
 
 # Create a file uploader
-st.markdown('<div class="uploader">', unsafe_allow_html=True)
 uploaded_file = st.file_uploader("", type=["mp4"])
-st.markdown('</div>', unsafe_allow_html=True)
 
 if uploaded_file is not None:
-    st.markdown('<div class="center"><div style="width: 80%;">', unsafe_allow_html=True)
     col1, col2 = st.columns(2)
 
     with col1:
@@ -102,15 +106,7 @@ if uploaded_file is not None:
         # Show the result
         st.success("Processing complete!")
         st.markdown('<div class="subheader">Recognized Speech</div>', unsafe_allow_html=True)
-        st.text("You said: [recognized speech placeholder]")
+        st.markdown('<div class="recognized-text">You said: [recognized speech placeholder]</div>', unsafe_allow_html=True)
 
-    st.markdown('</div></div>', unsafe_allow_html=True)
 else:
     st.warning("Please upload an MP4 video file.")
-
-# Add an expander for additional information
-with st.expander("About this App"):
-    st.write("""
-        This application uses visual speech recognition to convert video inputs to text. 
-        Upload an MP4 video, and the app will process the video to recognize and display the spoken text.
-    """)
