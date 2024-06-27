@@ -5,51 +5,34 @@ import time
 st.set_page_config(layout="wide")
 
 # Custom CSS for styling with the curated color palette
-primary_color = "#336699"  # Dark blue (can be adjusted based on data/preference)
-secondary_color = "#FFCC00"  # Orange (complementary color for contrast)
-accent_color = "#CCFF99"  # Light green (accent for buttons and highlights)
-
-# Set the page config to use the full width of the screen
-st.set_page_config(
-    layout="wide",
-    page_title="Speech Recognition App",  # Clear and descriptive title
-    page_icon="️",  # Speech bubble icon for visual appeal
-)
-
-# Custom CSS for styling
 st.markdown(
     """
     <style>
     body {
-        background-color: """
-    + primary_color
-    + """;
-        color: white;
-        font-family: sans-serif;  /* Specify a user-friendly font */
+        background-color: #003366;  /* Dark blue background */
+        color: #FFFFFF;  /* White text */
     }
     .main {
-        background-color: #f5f5f5;  /* Light background for readability */
+        background-color: #66CCCC;  /* Light blue main content background */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);  /* Subtle shadow */
     }
     .title {
         font-size: 2.5em;
-        color: white;
+        color: #FFFFFF;  /* White title text */
         text-align: center;
         margin-bottom: 0.5em;
     }
     .header {
         font-size: 1.75em;
-        color: """
-    + secondary_color
-    + """;
+        color: #FF6600;  /* Orange header text */
         text-align: center;
         margin-bottom: 1em;
     }
     .subheader {
         font-size: 1.5em;
-        color: #333;  /* Darker text for better contrast */
+        color: #669900;  /* Green subheader text */
         text-align: center;
         margin-bottom: 0.5em;
     }
@@ -60,40 +43,22 @@ st.markdown(
     }
     .recognized-text {
         font-size: 1.5em;
-        color: """
-    + secondary_color
-    + """;
+        color: #FF6600;  /* Orange recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #ddd;  /* Lighter border for subtlety */
+        border: 1px solid #CCCCCC;  /* Light grey border */
         padding: 10px;
         border-radius: 10px;
-        background-color: white;
+        background-color: #FFFFFF;  /* White background for recognized text */
     }
     .uploader {
         display: flex;
         justify-content: center;
         margin-bottom: 1em;
     }
-    .button {
-        background-color: """
-    + accent_color
-    + """;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;  /* Add some spacing */
-    }
-    .button:hover {
-        background-color: """
-    + str(hex(int(accent_color[1:], 16) + 55555)[2:])  # Darken on hover
-    + """;
-    }
     </style>
     """,
-    unsafe_allow_html=True,
+    unsafe_allow_html=True
 )
 
 # Sidebar with logo and information
