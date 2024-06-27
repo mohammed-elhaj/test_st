@@ -1,6 +1,9 @@
 import streamlit as st
 import time
 
+# Set the page config to use the full width of the screen
+st.set_page_config(layout="wide")
+
 # Custom CSS for styling
 st.markdown(
     """
