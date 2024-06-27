@@ -76,16 +76,23 @@ if uploaded_file is not None:
     with col2:
         # Display the processed video
         st.markdown('<div class="subheader">Processed Video</div>', unsafe_allow_html=True)
-
-        # Show a progress bar
-        st.markdown('<div class="subheader">Processing Video...</div>', unsafe_allow_html=True)
-        progress_bar = st.progress(0)
+        
+        # Show a progress bar and message
+        progress_message = st.empty()
+        progress_bar = st.empty()
+        
+        progress_message.markdown('<div class="subheader">Processing Video...</div>', unsafe_allow_html=True)
+        progress_bar = progress_bar.progress(0)
+        
         for percent_complete in range(100):
             time.sleep(0.05)
             progress_bar.progress(percent_complete + 1)
 
-        # Re-render the section to remove the progress bar
-        st.markdown('<div class="subheader">Processing Video...</div>', unsafe_allow_html=True)
+        # Clear the progress message and bar
+        progress_message.empty()
+        progress_bar.empty()
+        
+        # Show the processed video
         st.video("https://www.w3schools.com/html/mov_bbb.mp4")  # Placeholder video
 
         # Show a spinner while processing
