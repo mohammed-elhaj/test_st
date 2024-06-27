@@ -4,13 +4,15 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for styling with the curated color palette
+# Custom CSS for refined styling with the curated color palette and professional design
 st.markdown(
     """
     <style>
     body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #003366;  /* Dark blue background */
         color: #FFFFFF;  /* White text */
+        line-height: 1.6;
     }
     .main {
         background-color: #66CCCC;  /* Light blue main content background */
@@ -19,19 +21,19 @@ st.markdown(
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);  /* Subtle shadow */
     }
     .title {
-        font-size: 2.5em;
+        font-size: 2.8em;
         color: #FFFFFF;  /* White title text */
         text-align: center;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.3em;
     }
     .header {
-        font-size: 1.75em;
+        font-size: 2em;
         color: #FF6600;  /* Orange header text */
         text-align: center;
-        margin-bottom: 1em;
+        margin-bottom: 0.8em;
     }
     .subheader {
-        font-size: 1.5em;
+        font-size: 1.8em;
         color: #669900;  /* Green subheader text */
         text-align: center;
         margin-bottom: 0.5em;
@@ -46,10 +48,10 @@ st.markdown(
         color: #FF6600;  /* Orange recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #CCCCCC;  /* Light grey border */
         padding: 10px;
         border-radius: 10px;
         background-color: #FFFFFF;  /* White background for recognized text */
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow */
     }
     .uploader {
         display: flex;
