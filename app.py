@@ -4,33 +4,35 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for dark theme styling
+# Custom CSS for styling with a balanced color palette
 st.markdown(
     """
     <style>
     body {
-        background-color: #2E2E2E;
+        background-color: #f2f2f2;  /* Light grey background */
+        color: #333333;  /* Dark grey text */
     }
     .main {
-        background-color: #333333;
+        background-color: #ffffff;  /* White background for main content */
         padding: 20px;
         border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);  /* Subtle shadow */
     }
     .title {
         font-size: 2.5em;
-        color: #76D7C4;
+        color: #0066cc;  /* Blue title */
         text-align: center;
         margin-bottom: 0.5em;
     }
     .header {
         font-size: 1.75em;
-        color: #F7DC6F;
+        color: #009933;  /* Green header */
         text-align: center;
         margin-bottom: 1em;
     }
     .subheader {
         font-size: 1.5em;
-        color: #F1948A;
+        color: #ff6600;  /* Orange subheader */
         text-align: center;
         margin-bottom: 0.5em;
     }
@@ -41,13 +43,13 @@ st.markdown(
     }
     .recognized-text {
         font-size: 1.5em;
-        color: #F0F0F0;
+        color: #990099;  /* Purple recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #444444;
+        border: 1px solid #cccccc;  /* Light grey border */
         padding: 10px;
         border-radius: 10px;
-        background-color: #444444;
+        background-color: #f9f9f9;  /* Light grey background for recognized text */
     }
     .uploader {
         display: flex;
