@@ -4,30 +4,33 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for styling
+# Custom CSS for dark theme styling
 st.markdown(
     """
     <style>
+    body {
+        background-color: #2E2E2E;
+    }
     .main {
-        background-color: #f5f5f5;
+        background-color: #333333;
         padding: 20px;
         border-radius: 10px;
     }
     .title {
         font-size: 2.5em;
-        color: #4CAF50;
+        color: #76D7C4;
         text-align: center;
         margin-bottom: 0.5em;
     }
     .header {
         font-size: 1.75em;
-        color: #2196F3;
+        color: #F7DC6F;
         text-align: center;
         margin-bottom: 1em;
     }
     .subheader {
         font-size: 1.5em;
-        color: #FF5722;
+        color: #F1948A;
         text-align: center;
         margin-bottom: 0.5em;
     }
@@ -38,13 +41,18 @@ st.markdown(
     }
     .recognized-text {
         font-size: 1.5em;
-        color: #333333;
+        color: #F0F0F0;
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #ddd;
+        border: 1px solid #444444;
         padding: 10px;
         border-radius: 10px;
-        background-color: #f9f9f9;
+        background-color: #444444;
+    }
+    .uploader {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1em;
     }
     </style>
     """,
@@ -67,7 +75,9 @@ with st.sidebar:
 st.markdown('<div class="header">Upload your MP4 video file</div>', unsafe_allow_html=True)
 
 # Create a file uploader
+st.markdown('<div class="uploader">', unsafe_allow_html=True)
 uploaded_file = st.file_uploader("", type=["mp4"])
+st.markdown('</div>', unsafe_allow_html=True)
 
 if uploaded_file is not None:
     col1, col2 = st.columns(2)
