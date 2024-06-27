@@ -14,24 +14,36 @@ st.markdown(
         border-radius: 10px;
     }
     .title {
-        font-size: 2em;
+        font-size: 2.5em;
         color: #4CAF50;
+        text-align: center;
+        margin-bottom: 0.5em;
     }
     .header {
-        font-size: 1.5em;
+        font-size: 1.75em;
         color: #2196F3;
+        text-align: center;
+        margin-bottom: 1em;
     }
     .subheader {
-        font-size: 1.2em;
+        font-size: 1.25em;
         color: #FF5722;
+        text-align: center;
+        margin-bottom: 0.5em;
     }
     .center {
         display: flex;
         justify-content: center;
+        align-items: center;
     }
     .logo {
         max-width: 100px;
         margin-bottom: 20px;
+    }
+    .uploader {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1em;
     }
     </style>
     """,
@@ -40,7 +52,6 @@ st.markdown(
 
 # Display the logo
 st.markdown('<div class="center"><img class="logo" src="lips.png" alt="Lips Logo"></div>', unsafe_allow_html=True)
-st.image("lips.png", width=100)  # Added this line to ensure image is displayed
 
 # Set the title of the app
 st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_html=True)
@@ -49,12 +60,14 @@ st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_h
 st.markdown('<div class="header">Upload your MP4 video file</div>', unsafe_allow_html=True)
 
 # Create a file uploader
-uploaded_file = st.file_uploader("Choose an MP4 video", type=["mp4"])
-
-# Use columns for better layout
-col1, col2 = st.columns(2)
+st.markdown('<div class="uploader">', unsafe_allow_html=True)
+uploaded_file = st.file_uploader("", type=["mp4"])
+st.markdown('</div>', unsafe_allow_html=True)
 
 if uploaded_file is not None:
+    st.markdown('<div class="center"><div style="width: 80%;">', unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+
     with col1:
         # Display the uploaded video
         st.markdown('<div class="subheader">Uploaded Video</div>', unsafe_allow_html=True)
@@ -83,6 +96,8 @@ if uploaded_file is not None:
         st.success("Processing complete!")
         st.markdown('<div class="subheader">Recognized Speech</div>', unsafe_allow_html=True)
         st.text("You said: [recognized speech placeholder]")
+
+    st.markdown('</div></div>', unsafe_allow_html=True)
 else:
     st.warning("Please upload an MP4 video file.")
 
