@@ -4,35 +4,35 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for styling with a balanced color palette
+# Custom CSS for dark theme styling with a balanced color palette
 st.markdown(
     """
     <style>
     body {
-        background-color: #f2f2f2;  /* Light grey background */
-        color: #333333;  /* Dark grey text */
+        background-color: #1E1E1E;  /* Dark background */
+        color: #FFFFFF;  /* White text */
     }
     .main {
-        background-color: #ffffff;  /* White background for main content */
+        background-color: #2C2C2C;  /* Darker background for main content */
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);  /* Subtle shadow */
+        box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.1);  /* Subtle white shadow */
     }
     .title {
         font-size: 2.5em;
-        color: #0066cc;  /* Blue title */
+        color: #4CAF50;  /* Green title */
         text-align: center;
         margin-bottom: 0.5em;
     }
     .header {
         font-size: 1.75em;
-        color: #009933;  /* Green header */
+        color: #2196F3;  /* Blue header */
         text-align: center;
         margin-bottom: 1em;
     }
     .subheader {
         font-size: 1.5em;
-        color: #ff6600;  /* Orange subheader */
+        color: #FF5722;  /* Orange subheader */
         text-align: center;
         margin-bottom: 0.5em;
     }
@@ -43,13 +43,13 @@ st.markdown(
     }
     .recognized-text {
         font-size: 1.5em;
-        color: #990099;  /* Purple recognized text */
+        color: #FFEB3B;  /* Yellow recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #cccccc;  /* Light grey border */
+        border: 1px solid #333333;  /* Dark border */
         padding: 10px;
         border-radius: 10px;
-        background-color: #f9f9f9;  /* Light grey background for recognized text */
+        background-color: #333333;  /* Dark background for recognized text */
     }
     .uploader {
         display: flex;
