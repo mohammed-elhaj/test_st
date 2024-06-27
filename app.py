@@ -4,18 +4,24 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for refined styling with the curated color palette and professional design
+# Custom CSS for refined styling with the updated color palette and professional design
 st.markdown(
     """
     <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #003366;  /* Dark blue background */
+        background-color: #000000;  /* Black background */
         color: #FFFFFF;  /* White text */
         line-height: 1.6;
     }
+    .sidebar {
+        background-color: #FF6600;  /* Orangish sidebar background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);  /* Subtle shadow */
+    }
     .main {
-        background-color: #66CCCC;  /* Light blue main content background */
+        background-color: #222222;  /* Dark gray main content background */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);  /* Subtle shadow */
@@ -50,7 +56,7 @@ st.markdown(
         margin-top: 1em;
         padding: 10px;
         border-radius: 10px;
-        background-color: #FFFFFF;  /* White background for recognized text */
+        background-color: #222222;  /* Dark gray background for recognized text */
         box-shadow: 0px 2px 5px rgba(0,0,0,0.1);  /* Subtle shadow */
     }
     .uploader {
