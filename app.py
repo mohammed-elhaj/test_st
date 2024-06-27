@@ -18,18 +18,24 @@ st.markdown(
         color: #4CAF50;
         text-align: center;
         margin-bottom: 0.5em;
+        border-bottom: 2px solid #4CAF50; /* Border bottom for title */
+        padding-bottom: 0.25em; /* Padding bottom to adjust space */
     }
     .header {
         font-size: 1.75em;
         color: #2196F3;
         text-align: center;
         margin-bottom: 1em;
+        border-bottom: 2px solid #2196F3; /* Border bottom for header */
+        padding-bottom: 0.25em; /* Padding bottom to adjust space */
     }
     .subheader {
         font-size: 1.5em;
         color: #FF5722;
         text-align: center;
         margin-bottom: 0.5em;
+        border-bottom: 2px solid #FF5722; /* Border bottom for subheader */
+        padding-bottom: 0.25em; /* Padding bottom to adjust space */
     }
     .center {
         display: flex;
