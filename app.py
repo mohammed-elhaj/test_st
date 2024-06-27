@@ -37,6 +37,7 @@ st.markdown(
 
 # Display the logo
 st.markdown('<div class="center"><img class="logo" src="lips.png" alt="Lips Logo"></div>', unsafe_allow_html=True)
+st.image("lips.png", width=100)  # Added this line to ensure image is displayed
 
 # Set the title of the app
 st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_html=True)
@@ -67,6 +68,8 @@ if uploaded_file is not None:
             time.sleep(0.05)
             progress_bar.progress(percent_complete + 1)
 
+        # Re-render the section to remove the progress bar
+        st.markdown('<div class="subheader">Processing Video...</div>', unsafe_allow_html=True)
         st.video("https://www.w3schools.com/html/mov_bbb.mp4")  # Placeholder video
 
         # Show a spinner while processing
