@@ -47,10 +47,11 @@ st.markdown(
         background-color: #f9f9f9;
     }
     .sidebar-content {
-        background-color: #f0f0f0;
+        background-color: #333333; /* Darker background color */
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 20px;
+        color: #ffffff; /* White text color */
     }
     </style>
     """,
