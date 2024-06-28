@@ -4,35 +4,35 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for styling
+# Custom CSS for styling with the selected color palette
 st.markdown(
     """
     <style>
     .main {
-        background-color: #f5f5f5;
+        background-color: #f5f5f5; /* Light gray background */
         padding: 20px;
         border-radius: 10px;
     }
     .title {
         font-size: 2.5em;
-        color: #4CAF50;
+        color: #4CAF50; /* Green title */
         text-align: center;
         margin-bottom: 0.5em;
     }
     .header {
         font-size: 1.75em;
-        color: #2196F3;
+        color: #2196F3; /* Blue header */
         text-align: center;
         margin-bottom: 1em;
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid #ccc; /* Light gray border */
         padding-bottom: 0.5em;
     }
     .subheader {
         font-size: 1.5em;
-        color: #FF5722;
+        color: #FF5722; /* Orange subheader */
         text-align: center;
         margin-bottom: 0.5em;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #ddd; /* Light gray border */
         padding-bottom: 0.3em;
     }
     .center {
@@ -42,13 +42,13 @@ st.markdown(
     }
     .recognized-text {
         font-size: 1.5em;
-        color: #333333;
+        color: #333333; /* Dark gray recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #ddd;
+        border: 1px solid #ddd; /* Light gray border */
         padding: 10px;
         border-radius: 10px;
-        background-color: #f9f9f9;
+        background-color: #f9f9f9; /* Light gray background */
     }
     </style>
     """,
@@ -114,4 +114,3 @@ if uploaded_file is not None:
 
 else:
     st.warning("يرجى تحميل ملف فيديو MP4.")
-
