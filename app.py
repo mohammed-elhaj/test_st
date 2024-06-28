@@ -18,24 +18,22 @@ st.markdown(
         color: #4CAF50;
         text-align: center;
         margin-bottom: 0.5em;
-        border-bottom: 2px solid #4CAF50; /* Border bottom for title */
-        padding-bottom: 0.25em; /* Padding bottom to adjust space */
     }
     .header {
         font-size: 1.75em;
         color: #2196F3;
         text-align: center;
         margin-bottom: 1em;
-        border-bottom: 2px solid #2196F3; /* Border bottom for header */
-        padding-bottom: 0.25em; /* Padding bottom to adjust space */
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 0.5em;
     }
     .subheader {
         font-size: 1.5em;
         color: #FF5722;
         text-align: center;
         margin-bottom: 0.5em;
-        border-bottom: 2px solid #FF5722; /* Border bottom for subheader */
-        padding-bottom: 0.25em; /* Padding bottom to adjust space */
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.3em;
     }
     .center {
         display: flex;
@@ -52,13 +50,6 @@ st.markdown(
         border-radius: 10px;
         background-color: #f9f9f9;
     }
-    .sidebar-content {
-        background-color: #333333; /* Darker background color */
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        color: #ffffff; /* White text color */
-    }
     </style>
     """,
     unsafe_allow_html=True
@@ -67,19 +58,17 @@ st.markdown(
 # Sidebar with logo and information
 with st.sidebar:
     st.image("lips.png", width=100)
-    st.markdown('<div class="sidebar-content">', unsafe_allow_html=True)
-    st.markdown('<div class="title">Visual Speech Recognition</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title">قارئ الشفاه</div>', unsafe_allow_html=True)
     st.markdown(
         """
-        This application uses visual speech recognition to convert video inputs to text. 
-        Upload an MP4 video, and the app will process the video to recognize and display the spoken text.
+        هذا التطبيق يستخدم التعرف على الشفاه لتحويل مقاطع الفيديو إلى نص. 
+        قم بتحميل ملف فيديو MP4، وسيقوم التطبيق بمعالجة الفيديو للتعرف على النص المنطوق وعرضه.
         """,
         unsafe_allow_html=True
     )
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Main content
-st.markdown('<div class="header">Upload your MP4 video file</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">قم بتحميل ملف الفيديو MP4 الخاص بك</div>', unsafe_allow_html=True)
 
 # Create a file uploader
 uploaded_file = st.file_uploader("", type=["mp4"])
@@ -89,18 +78,18 @@ if uploaded_file is not None:
 
     with col1:
         # Display the uploaded video
-        st.markdown('<div class="subheader">Uploaded Video</div>', unsafe_allow_html=True)
+        st.markdown('<div class="subheader">ملف الفيديو المحمل</div>', unsafe_allow_html=True)
         st.video("https://www.w3schools.com/html/mov_bbb.mp4")  # Placeholder video
 
     with col2:
         # Display the processed video
-        st.markdown('<div class="subheader">Processed Video</div>', unsafe_allow_html=True)
+        st.markdown('<div class="subheader">معالجة الفيديو</div>', unsafe_allow_html=True)
         
         # Show a progress bar and message
         progress_message = st.empty()
         progress_bar = st.empty()
         
-        progress_message.markdown('<div class="subheader">Processing Video...</div>', unsafe_allow_html=True)
+        progress_message.markdown('<div class="subheader">جارٍ معالجة الفيديو...</div>', unsafe_allow_html=True)
         progress_bar = progress_bar.progress(0)
         
         for percent_complete in range(100):
@@ -115,13 +104,14 @@ if uploaded_file is not None:
         st.video("https://www.w3schools.com/html/mov_bbb.mp4")  # Placeholder video
 
         # Show a spinner while processing
-        with st.spinner('Running speech recognition...'):
+        with st.spinner('جارٍ تشغيل التعرف على الكلام...'):
             time.sleep(2)  # Simulate processing time
 
         # Show the result
-        st.success("Processing complete!")
-        st.markdown('<div class="subheader">Recognized Speech</div>', unsafe_allow_html=True)
-        st.markdown('<div class="recognized-text">You said: [recognized speech placeholder]</div>', unsafe_allow_html=True)
+        st.success("اكتملت المعالجة!")
+        st.markdown('<div class="subheader">النص المعترف به</div>', unsafe_allow_html=True)
+        st.markdown('<div class="recognized-text">لقد قلت: [مكان للنص المعترف به]</div>', unsafe_allow_html=True)
 
 else:
-    st.warning("Please upload an MP4 video file.")
+    st.warning("يرجى تحميل ملف فيديو MP4.")
+
