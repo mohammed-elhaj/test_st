@@ -68,7 +68,7 @@ with st.sidebar:
     )
 
 # Main content
-st.markdown('<div class="header">قم بتحميل ملف الفيديو MP4 الخاص بك</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">قم بتحميل ملف الفيديو الخاص بك</div>', unsafe_allow_html=True)
 
 # Create a file uploader
 uploaded_file = st.file_uploader("", type=["mp4"])
