@@ -4,14 +4,13 @@ import time
 # Set the page config to use the full width of the screen
 st.set_page_config(layout="wide")
 
-# Custom CSS for styling with the selected color palette
+# Custom CSS for dark mode styling
 st.markdown(
     """
     <style>
-    .main {
-        background-color: #f5f5f5; /* Light gray background */
-        padding: 20px;
-        border-radius: 10px;
+    body {
+        background-color: #1a1a1a; /* Dark background */
+        color: #f0f0f0; /* Light text */
     }
     .title {
         font-size: 2.5em;
@@ -24,7 +23,7 @@ st.markdown(
         color: #2196F3; /* Blue header */
         text-align: center;
         margin-bottom: 1em;
-        border-bottom: 2px solid #ccc; /* Light gray border */
+        border-bottom: 2px solid #444; /* Dark gray border */
         padding-bottom: 0.5em;
     }
     .subheader {
@@ -32,7 +31,7 @@ st.markdown(
         color: #FF5722; /* Orange subheader */
         text-align: center;
         margin-bottom: 0.5em;
-        border-bottom: 1px solid #ddd; /* Light gray border */
+        border-bottom: 1px solid #666; /* Dark gray border */
         padding-bottom: 0.3em;
     }
     .center {
@@ -42,13 +41,13 @@ st.markdown(
     }
     .recognized-text {
         font-size: 1.5em;
-        color: #333333; /* Dark gray recognized text */
+        color: #f0f0f0; /* Light gray recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #ddd; /* Light gray border */
+        border: 1px solid #666; /* Dark gray border */
         padding: 10px;
         border-radius: 10px;
-        background-color: #f9f9f9; /* Light gray background */
+        background-color: #333; /* Dark gray background */
     }
     </style>
     """,
@@ -68,7 +67,7 @@ with st.sidebar:
     )
 
 # Main content
-st.markdown('<div class="header">قم بتحميل ملف الفيديو الخاص بك</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">قم بتحميل ملف الفيديو MP4 الخاص بك</div>', unsafe_allow_html=True)
 
 # Create a file uploader
 uploaded_file = st.file_uploader("", type=["mp4"])
