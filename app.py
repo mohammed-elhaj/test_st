@@ -38,6 +38,7 @@ st.markdown(
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
     .recognized-text {
         font-size: 1.5em;
@@ -56,7 +57,7 @@ st.markdown(
 
 # Sidebar with logo and information
 with st.sidebar:
-    st.image("lips.png", width=100)
+    st.markdown('<div class="center"><img src="lips.png" width="100"></div>', unsafe_allow_html=True)
     st.markdown('<div class="title">قارئ الشفاه</div>', unsafe_allow_html=True)
     st.markdown(
         """
