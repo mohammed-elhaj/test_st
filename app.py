@@ -44,10 +44,10 @@ st.markdown(
         color: #f0f0f0; /* Light gray recognized text */
         text-align: center;
         margin-top: 1em;
-        border: 1px solid #666; /* Dark gray border */
         padding: 10px;
         border-radius: 10px;
-        
+        background-color: #333; /* Dark gray background */
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* White shadow for contrast */
     }
     </style>
     """,
