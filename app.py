@@ -47,7 +47,7 @@ st.markdown(
         border: 1px solid #666; /* Dark gray border */
         padding: 10px;
         border-radius: 10px;
-        background-color: #f9f9f9; /* Dark gray background */
+        
     }
     </style>
     """,
